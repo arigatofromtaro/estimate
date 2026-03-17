@@ -202,7 +202,28 @@ select:focus, input[type="number"]:focus {
     box-shadow: 0 10px 20px rgba(6, 199, 85, 0.3);
 }
 
-.line-btn span:nth-child(2) {
+.drive-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.drive-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+.line-btn span:nth-child(2), .drive-btn span:nth-child(2) {
     font-size: 0.8rem;
     font-weight: 400;
     opacity: 0.9;
