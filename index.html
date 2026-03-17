@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIGATOGOZAIMASU.PRINT | 30秒お見積り</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">ARIGATOGOZAIMASU.PRINT</div>
+            <h1>30秒お見積り</h1>
+        </header>
+
+        <main>
+            <form id="estimateForm">
+                <!-- Q1: Item Selection -->
+                <section class="card" id="q1Section">
+                    <label for="itemType">Q1. アイテムを選んでください</label>
+                    <select id="itemType" name="itemType" required>
+                        <option value="" disabled selected>アイテムを選択...</option>
+                        <option value="item1">①綿Tシャツ (Printstar 085CVT)</option>
+                        <option value="item2">②ハイクオリティ綿Tシャツ (United Athle 5001)</option>
+                        <option value="item3">③ドライTシャツ (glimmer 300ACT / United Athle 5900)</option>
+                        <option value="item4">④TCポロシャツ (Printstar 100VP)</option>
+                        <option value="item5">⑤ドライポロシャツ (glimmer 302ADP)</option>
+                        <option value="item6">⑥ドライ長袖Tシャツ (glimmer 304ALT / United Athle 508901)</option>
+                        <option value="item7">⑦綿長袖Tシャツ (Printstar 102CVL)</option>
+                    </select>
+                </section>
+
+                <!-- Q2: Quantity -->
+                <section class="card">
+                    <label for="quantity">Q2. 作成したい正確な枚数を入力してください</label>
+                    <div class="input-with-unit">
+                        <input type="number" id="quantity" name="quantity" min="1" placeholder="例: 200" required>
+                        <span class="unit">枚</span>
+                    </div>
+                </section>
+
+                <!-- Q3: Options - Additional Print -->
+                <section class="card">
+                    <label>Q3. 追加プリントはありますか？</label>
+                    <div class="radio-group">
+                        <input type="radio" id="addNone" name="addPrint" value="none" checked>
+                        <label for="addNone">追加はなし。1か所1色は無料内！</label>
+
+                        <input type="radio" id="addBack" name="addPrint" value="back">
+                        <label for="addBack">胸/背中に追加する</label>
+
+                        <input type="radio" id="addSleeve" name="addPrint" value="sleeve">
+                        <label for="addSleeve">袖に追加する</label>
+                    </div>
+                </section>
+
+                <!-- Q4: Bagging -->
+                <section class="card">
+                    <label>Q4. 袋詰めは必要ですか？</label>
+                    <div class="radio-group">
+                        <input type="radio" id="bagNone" name="bag" value="none" checked>
+                        <label for="bagNone">A なし</label>
+
+                        <input type="radio" id="bagYes" name="bag" value="yes">
+                        <label for="bagYes">B あり (1枚50円)</label>
+                    </div>
+                </section>
+
+                <!-- Q5: Name Tag -->
+                <section class="card">
+                    <label>Q5. ネームタグは必要ですか？</label>
+                    <div class="radio-group">
+                        <input type="radio" id="tagNone" name="tag" value="none" checked>
+                        <label for="tagNone">A なし</label>
+
+                        <input type="radio" id="tagYes" name="tag" value="yes">
+                        <label for="tagYes">B カスタム (+1枚400円)</label>
+                    </div>
+                </section>
+            </form>
+
+            <div class="result-card">
+                <div class="result-header">概算合計金額</div>
+                <div class="total-amount">約 <span id="totalDisplay">0</span> 円</div>
+                <div class="details">
+                    <p>基本単価: <span id="basicPriceDisplay">0</span> 円</p>
+                    <p>追加料金: <span id="addPriceDisplay">0</span> 円</p>
+                </div>
+                <a href="https://line.me/R/ti/p/%40arigatogozaimasu" class="line-btn">
+                    <span>LINEで気軽に相談したい！</span>
+                    <span>さらにお気持ちお安くします。</span>
+                </a>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
