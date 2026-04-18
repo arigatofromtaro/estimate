@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const qFabricColorSection = document.getElementById('qFabricColorSection');
     const qPrintSizeSection = document.getElementById('qPrintSizeSection');
 
+    const labelAddNone = document.querySelector('label[for="addNone"]');
+
     const updateVisibility = () => {
         if (form.colorScheme.value === 'inkjet') {
             qFabricColorSection.classList.remove('hidden');
@@ -14,9 +16,11 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 qPrintSizeSection.classList.add('hidden');
             }
+            labelAddNone.textContent = '追加はなし';
         } else {
             qFabricColorSection.classList.add('hidden');
             qPrintSizeSection.classList.add('hidden');
+            labelAddNone.textContent = '追加はなし。1か所1色は無料内！';
         }
     };
     
