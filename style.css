@@ -51,8 +51,16 @@ h1 {
     font-size: 2.2rem;
     background: linear-gradient(to right, #fff, var(--text-dim));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-top: 1rem;
+    line-height: 1.5;
 }
 
 .card {
@@ -184,6 +192,16 @@ select:focus, input[type="number"]:focus {
     font-weight: 700;
 }
 
+.disclaimer-bottom {
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+}
+
 .line-btn {
     display: flex;
     flex-direction: column;
@@ -252,3 +270,8 @@ select:focus, input[type="number"]:focus {
         font-size: 2.5rem;
     }
 }
+
+.hidden {
+    display: none !important;
+}
+

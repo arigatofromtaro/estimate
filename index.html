@@ -14,13 +14,51 @@
         <header>
             <div class="logo">ARIGATOGOZAIMASU.PRINT</div>
             <h1>30秒お見積り</h1>
+            <p class="disclaimer">※こちらで算出される金額はあくまでも概算です。<br>詳細な金額や仕様については、お気軽にご相談ください！</p>
         </header>
 
         <main>
             <form id="estimateForm">
-                <!-- Q1: Item Selection -->
+                <!-- Q1: Color Scheme -->
+                <section class="card" id="qColorSection">
+                    <label>Q1. プリントの配色は？</label>
+                    <div class="radio-group">
+                        <input type="radio" id="colorSilk" name="colorScheme" value="silk" checked>
+                        <label for="colorSilk">A 1〜2色 (単色ロゴなど)</label>
+
+                        <input type="radio" id="colorInkjet" name="colorScheme" value="inkjet">
+                        <label for="colorInkjet">B 3色以上または写真 (フルカラー)</label>
+                    </div>
+                </section>
+
+                <section class="card hidden" id="qFabricColorSection">
+                    <label>フルカラー: 生地の色は？</label>
+                    <div class="radio-group">
+                        <input type="radio" id="fabricWhite" name="fabricColor" value="white" checked>
+                        <label for="fabricWhite">白生地</label>
+
+                        <input type="radio" id="fabricColor" name="fabricColor" value="color">
+                        <label for="fabricColor">白以外の色 (有色生地)</label>
+                    </div>
+                </section>
+
+                <section class="card hidden" id="qPrintSizeSection">
+                    <label>フルカラー: プリントのサイズは？</label>
+                    <div class="radio-group">
+                        <input type="radio" id="size10" name="printSize" value="10" checked>
+                        <label for="size10">小 (10cm角以内)</label>
+
+                        <input type="radio" id="size20" name="printSize" value="20">
+                        <label for="size20">中 (20cm角以内)</label>
+                        
+                        <input type="radio" id="size30" name="printSize" value="30">
+                        <label for="size30">大 (A4・30cm×40cm以内)</label>
+                    </div>
+                </section>
+
+                <!-- Q2: Item Selection -->
                 <section class="card" id="q1Section">
-                    <label for="itemType">Q1. アイテムを選んでください</label>
+                    <label for="itemType">Q2. アイテムを選んでください</label>
                     <select id="itemType" name="itemType" required>
                         <option value="" disabled selected>アイテムを選択...</option>
                         <option value="item1">①綿Tシャツ (Printstar 085CVT)</option>
@@ -33,18 +71,18 @@
                     </select>
                 </section>
 
-                <!-- Q2: Quantity -->
+                <!-- Q3: Quantity -->
                 <section class="card">
-                    <label for="quantity">Q2. 作成したい正確な枚数を入力してください</label>
+                    <label for="quantity">Q3. 作成したい正確な枚数を入力してください</label>
                     <div class="input-with-unit">
                         <input type="number" id="quantity" name="quantity" min="1" placeholder="例: 200" required>
                         <span class="unit">枚</span>
                     </div>
                 </section>
 
-                <!-- Q3: Options - Additional Print -->
+                <!-- Q4: Options - Additional Print -->
                 <section class="card">
-                    <label>Q3. 追加プリントはありますか？</label>
+                    <label>Q4. 追加プリントはありますか？</label>
                     <div class="radio-group">
                         <input type="radio" id="addNone" name="addPrint" value="none" checked>
                         <label for="addNone">追加はなし。1か所1色は無料内！</label>
@@ -57,9 +95,9 @@
                     </div>
                 </section>
 
-                <!-- Q4: Bagging -->
+                <!-- Q5: Bagging -->
                 <section class="card">
-                    <label>Q4. 袋詰めは必要ですか？</label>
+                    <label>Q5. 袋詰めは必要ですか？</label>
                     <div class="radio-group">
                         <input type="radio" id="bagNone" name="bag" value="none" checked>
                         <label for="bagNone">A なし</label>
@@ -69,9 +107,9 @@
                     </div>
                 </section>
 
-                <!-- Q5: Name Tag -->
+                <!-- Q6: Name Tag -->
                 <section class="card">
-                    <label>Q5. ネームタグは必要ですか？</label>
+                    <label>Q6. ネームタグは必要ですか？</label>
                     <div class="radio-group">
                         <input type="radio" id="tagNone" name="tag" value="none" checked>
                         <label for="tagNone">A なし</label>
@@ -89,6 +127,9 @@
                     <p>基本単価: <span id="basicPriceDisplay">0</span> 円</p>
                     <p>追加料金: <span id="addPriceDisplay">0</span> 円</p>
                 </div>
+                
+                <p class="disclaimer-bottom">※上記の金額はあくまでも概算です。<br>デザインの確定や正式な見積もりは、まずはご相談しましょう！</p>
+
                 <a href="https://lin.ee/YJMYoWZ" class="line-btn">
                     <span>LINEで気軽に相談したい！</span>
                     <span>さらにお気持ちお安くします。</span>
